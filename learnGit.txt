@@ -1,0 +1,43 @@
+1.提交
+git add .
+git commit -m "commit somtething"
+
+2.删除文件
+git rm test.txt
+git commit -m "delete somtething"
+
+2.撤销
+git reset HEAD .(如果已经add了，要加这一句)
+git checkon -- .
+
+3.回退到某个版本
+git reset -- hard 38ff21
+git reset -- hard HEAD^（回退到上一个版本）
+
+4.查看
+git status
+git log
+
+5.github
+ssh-keygen -t rsa -C "youremail@example.com"（生成rsa，用一次即可）
+git remote add origin git@github.com:michaelliao/learngit.git（好像用不着，用下面的从github上clone就好了）
+git clone git@github.com:michaelliao/gitskills.git（从github上clone下来）
+git push -u origin master （git push origin master，更新至github上）
+
+6.忽略 ignore
+用vim创建.gitignore文件
+【例子】
+# 忽略*.o和*.a文件
+ *.[oa]
+# 忽略*.b和*.B文件，my.b除外
+*.[bB]
+!my.b
+# 忽略dbg文件和dbg目录
+dbg
+# 只忽略dbg目录，不忽略dbg文件
+dbg/
+# 只忽略dbg文件，不忽略dbg目录
+dbg
+!dbg/
+# 只忽略当前目录下的dbg文件和目录，子目录的dbg不在忽略范围内
+/dbg
